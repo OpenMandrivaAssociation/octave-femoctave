@@ -1,16 +1,16 @@
 %global oname FEMoctave
 %global octpkg %(echo %{oname} | tr [:upper:] [:lower:])
 
-#It requireas non-free software to work!
+#NOTE: NOTE: some features will not work because require non-free software!
 
 Summary:	A simple FEM package for solving boundary value problems in two space dimensions.
 Name:		octave-%{octpkg}
 Version:	2.0.3
 Release:	1
-Source0:	https://github.com/AndreasStahel/%{oname}/archive/v%{version}/%{octpkg}-%{version}.tar.gz
+Url:		https://github.com/AndreasStahel/%{oname}/
+Source0:	%{url}//archive/v%{version}/%{octpkg}-%{version}.tar.gz
 License:	GPLv3+
 Group:		Sciences/Mathematics
-Url:		https://github.com/AndreasStahel/%{oname}/
 BuildArch:	noarch
 
 BuildRequires:	octave-devel >= 4.4.0
@@ -24,6 +24,8 @@ Requires(postun): octave
 A simple FEM package to use FEM for solving boundary value problems in
 two space dimensions.
 
+NOTE: some features will not work because require non-free software.
+
 %files
 %license COPYING
 %doc NEWS
@@ -36,6 +38,9 @@ two space dimensions.
 
 %prep
 %autosetup -p1 -n %{oname}-%{version}
+
+# fix version inside DESCRIPTION
+sed -i -e "s|Version: 2.0.1|Version: %{version}|" DESCRIPTION
 
 # remove backup files
 #find . -name \*~ -delete
