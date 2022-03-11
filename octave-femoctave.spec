@@ -11,7 +11,6 @@ Url:		https://github.com/AndreasStahel/%{oname}/
 Source0:	%{url}//archive/v%{version}/%{octpkg}-%{version}.tar.gz
 License:	GPLv3+
 Group:		Sciences/Mathematics
-BuildArch:	noarch
 
 BuildRequires:	octave-devel >= 4.4.0
 
