@@ -1,18 +1,18 @@
-%global oname FEMoctave
-%global octpkg %(echo %{oname} | tr [:upper:] [:lower:])
+%global octpkg femoctave
 
-#NOTE: NOTE: some features will not work because require non-free software!
+#NOTE: some features will not work because require non-free software!
 
 Summary:	A simple FEM package for solving boundary value problems in two space dimensions.
-Name:		octave-%{octpkg}
-Version:	2.0.3
+Name:		octave-femoctave
+Version:	2.0.10
 Release:	1
-Url:		https://github.com/AndreasStahel/%{oname}/
-Source0:	%{url}//archive/v%{version}/%{octpkg}-%{version}.tar.gz
 License:	GPLv3+
 Group:		Sciences/Mathematics
+#Url:		https://packages.octave.org/femoctave/
+Url:		https://github.com/AndreasStahel/FEMoctave/
+Source0:	https://github.com/AndreasStahel/FEMoctave//archive/v%{version}/femoctave-%{version}.tar.gz
 
-BuildRequires:	octave-devel >= 4.4.0
+BuildRequires:  octave-devel >= 5.2.0
 
 Requires:	octave(api) = %{octave_api}
 
@@ -28,23 +28,18 @@ NOTE: some features will not work because require non-free software.
 %files
 %license COPYING
 %doc NEWS
-%dir %{octpkglibdir}
-%{octpkglibdir}/*
 %dir %{octpkgdir}
 %{octpkgdir}/*
+%dir %{octpkglibdir}
+%{octpkglibdir}/*
 
 #---------------------------------------------------------------------------
 
 %prep
-%autosetup -p1 -n %{oname}-%{version}
-
-# fix version inside DESCRIPTION
-sed -i -e "s|Version: 2.0.1|Version: %{version}|" DESCRIPTION
-
-# remove backup files
-#find . -name \*~ -delete
+%autosetup -p1 -n FEMoctave-%{version}
 
 %build
+%set_build_flags
 %octave_pkg_build
 
 %install
