@@ -4,13 +4,15 @@
 
 Summary:	A simple FEM package for solving boundary value problems in two space dimensions.
 Name:		octave-femoctave
-Version:	2.1.1
+Version:	2.1.2
 Release:	1
 License:	GPLv3+
 Group:		Sciences/Mathematics
 #Url:		https://packages.octave.org/femoctave/
 Url:		https://github.com/AndreasStahel/FEMoctave/
-Source0:	https://github.com/AndreasStahel/FEMoctave//archive/v%{version}/femoctave-%{version}.tar.gz
+Source0:	https://github.com/AndreasStahel/FEMoctave/archive/v.%{version}/femoctave-%{version}.tar.gz
+#Source0:	https://github.com/AndreasStahel/FEMoctave/archive/refs/tags/v%{version}/femoctave-%{version}.tar.gz
+#Source0:	https://github.com/AndreasStahel/FEMoctave/archive/refs/tags/v%{version}/FEMoctave-%{version}.tar.gz
 
 BuildRequires:  octave-devel >= 5.2.0
 
