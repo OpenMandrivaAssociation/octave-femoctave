@@ -38,7 +38,7 @@ NOTE: some features will not work because require non-free software.
 #---------------------------------------------------------------------------
 
 %prep
-%autosetup -p1 -n FEMoctave-%{version}
+%autosetup -p1 -n FEMoctave-v.%{version}
 
 %build
 %set_build_flags
