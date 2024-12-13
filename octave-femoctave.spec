@@ -4,8 +4,8 @@
 
 Summary:	A simple FEM package for solving boundary value problems in two space dimensions.
 Name:		octave-femoctave
-Version:	2.1.4
-Release:	2
+Version:	2.1.5
+Release:	1
 License:	GPLv3+
 Group:		Sciences/Mathematics
 #Url:		https://packages.octave.org/femoctave/
